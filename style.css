@@ -5191,7 +5191,7 @@ ul.achivement li:last-child .counter {
     content: "";
     height: 100%;
     width: 100%;
-    background: rgba(8, 106, 216, 0.07);
+    /* background: rgba(8, 106, 216, 0.07); */
     border-radius: 30px;
     transform: rotate(-45deg);
     transition: all 0.35s ease-in-out;
@@ -5202,13 +5202,13 @@ ul.achivement li:last-child .counter {
     background: rgba(8, 106, 216, 0.2);
 }
 
-.main-services-box .item:hover .icon::after {
+/* .main-services-box .item:hover .icon::after {
     left: 0;
     width: 100%;
     border-radius: 50%;
     transform: inherit;
     margin-left: 0;
-}
+} */
 
 .main-services-box .item h4 {
     font-weight: 600;
