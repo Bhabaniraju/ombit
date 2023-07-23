@@ -63,7 +63,7 @@ Table of contents
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Cypro+Minoan&display=swap" rel="stylesheet');
 
 * {
   padding: 0;
@@ -78,13 +78,13 @@ html {
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Noto', sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 26px;
   overflow-x: hidden;
   background-color: #ffffff;
-  color: #666666;
+  color: #000000;
 }
 
 body.dark-layout {
