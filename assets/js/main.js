@@ -463,3 +463,23 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
+
+// cursor dot
+
+jQuery(document).ready(function() {
+
+    var mouseX = 0, mouseY = 0;
+    var xp = 0, yp = 0;
+     
+    $(document).mousemove(function(e){
+      mouseX = e.pageX - 3;
+      mouseY = e.pageY - 3; 
+    });
+      
+    setInterval(function(){
+      xp += ((mouseX - xp)/6);
+      yp += ((mouseY - yp)/6);
+      $("#dot").css({left: xp +'px', top: yp +'px'});
+    }, 20);
+  
+  });
