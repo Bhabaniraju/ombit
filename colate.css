@@ -566,6 +566,7 @@ a.link-arrow:hover {
   overflow: hidden;
 }
 
+
 .readmore {
   position:relative;
   right:78px;
@@ -584,6 +585,38 @@ a.link-arrow:hover {
      z-index: 1000;
     
   }
+
+  .readmore-blog {
+    position:relative;
+    right:98px;
+        width: 100px;
+        height: 100px;
+
+        animation-fill-mode: forwards;
+        -webkit-transition: right 0.5s; /* For Safari 3.1 to 6.0 */
+        transition: right 0.5s;
+        z-index: -1000;
+       
+    }
+    
+    .itembox-blog:hover .readmore-blog{
+       right:-30px;
+       z-index: 1000;
+      
+    }
+
+    .card-footer
+    {
+      overflow-x: hidden;
+    }
+
+    .itembox-blog{
+      /* box-shadow: 0 0px 2px rgba(0,0,0,0.15); */
+      transition: box-shadow 0.3s ease-in-out;
+      padding-top: 0px;
+      padding-bottom: 0px;
+     
+    }
   .itembox{
     /* box-shadow: 0 0px 2px rgba(0,0,0,0.15); */
     transition: box-shadow 0.3s ease-in-out;
@@ -790,3 +823,16 @@ display: inline-block;
   background-color:black;
 }
 /* cursor dot circle css end */
+
+/* planet css */
+
+#canvas{
+	width:100%;
+	height:550px;
+	display: block;
+	background:transparent !important;
+	cursor: move;
+  z-index: -999;
+}
+
+/* planet css end */
