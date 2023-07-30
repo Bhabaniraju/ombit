@@ -545,7 +545,8 @@ button {
 
 img.robokid1 {
   position: relative;
-  top: 168px;
+  top: 18px;
+  left:109px;
 }
 /* atom css end */
 
@@ -836,3 +837,38 @@ display: inline-block;
 }
 
 /* planet css end */
+
+/* personal blog */
+
+/* personal blog end */
+
+/* image distration css */
+
+.boxcontainer
+{
+    position:relative;
+    width:800px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
+}
+
+.boxcontainer .imgBox{
+    position:relative;
+    width:450px;
+    height:500px;
+    margin:10px;
+}
+
+.boxcontainer .imgBox img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display: none;
+}
+
+/* image distration end css */
