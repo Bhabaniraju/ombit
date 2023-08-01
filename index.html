@@ -63,43 +63,16 @@
 <!-- Start Navigation -->
 <nav class="navbar navbar-default navbar-fixed white no-background bootsnav">
 
-<!-- Start Top Search -->
-<!-- <div class="top-search">
-<div class="container">
-<div class="input-group">
-<span class="input-group-addon"><i class="fa fa-search"></i></span>
-<input type="text" class="form-control" placeholder="Search">
-<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-</div>
-</div>
-</div> -->
-<!-- End Top Search -->
+
 
 <div class="container-full">
 
-<!-- Start Atribute Navigation -->
-<!-- <div class="attr-nav">
-<ul>
-<li class="search"><a href="#"><i class="ti-search"></i></a></li>
-<li class="side-menu">
-<a href="#">
-<span class="bar-1"></span>
-<span class="bar-2"></span>
-<span class="bar-3"></span>
-</a>
-</li>
-</ul>
-</div>         -->
-<!-- End Atribute Navigation -->
-
-<!-- Start Header Navigation -->
 <div class="navbar-header">
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 <i class="fa fa-bars"></i>
 </button>
 <a class="navbar-brand" href="index.html">
-<!-- <img src="assets/img/logo-light.png" class="logo logo-display" alt="Logo">
-<img src="assets/img/logo-blue.png" class="logo logo-scrolled" alt="Logo"> -->
+
 <h2 class="logo logo-display black">OMBIT</h2>
 <h2 class="logo logo-scrolled orange">OMBIT</h2>
 </a>
@@ -150,11 +123,44 @@
 
 </header>
 <!-- End Header -->
+
+<main>
+    <div id="slider">
+
+        <div class="slider-inner">
+            <div id="slider-content">
+                <div class="meta">DEPLOY</div>
+                <h2 id="slide-title">Amur <br>Leopard</h2>
+                <span data-slide-title="0">Build applications with  <br>OMBIT</span>
+                <span data-slide-title="1">Artificial <br>AI</span>
+                <span data-slide-title="2">Blockchain <br>Web</span>
+                
+                <div class="meta">Status</div>
+                <div id="slide-status">Critically Endangered</div>
+                <span data-slide-status="0">Critically Endangered</span>
+                <span data-slide-status="1">Endangered</span>
+                <span data-slide-status="2">Endangered</span>
+  
+            </div>
+        </div>
+        <img src="/assets/img/img_67.png"/>
+        <img src="/assets/img/img_69.jpg" />
+        <img src="/assets/img/img_68.png" />
+     
+ 
+       
+        <div id="pagination1">
+            <button class="active" data-slide="0"></button>
+            <button data-slide="1"></button>
+            <button data-slide="2"></button>
+      
+        </div>
+
+    </div>
+</main>
 <!-- Start Breadcrumb 
 ============================================= -->
-<div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(assets/img/vision-lead.jpg);">
 
-</div>
 <!-- End Breadcrumb -->
 <div class="about-area overflow-hidden default-padding mt-5">
 <div class="container">
@@ -163,15 +169,6 @@
 
 <!-- Thumb -->
 <div class="col-lg-6">
-<!-- <div class="thumb">
-<article class="card-robo">
-<div class="content-robo">
-
-<button type="button">Explore</button>
-</div>
-</article>
-</div> -->
-
 
 
 <div class="thumb">
@@ -197,23 +194,7 @@
 At our core, we're a team of innovative thinkers and problem solvers, united by a common goal: to create products and services that make a meaningful impact in the world.
 </p>
 
-<!-- <div class="content-inner">
-<a href="https://www.youtube.com/watch?v=owhuBrGIOsE" class="popup-youtube theme video-play-button item-center">
-<i class="fa fa-play"></i>
-</a>
-<div class="row align-center">
-<div class="col-lg-6">
-<ul>
-    <li>Fresh ideas</li>
-    <li>Unique designs</li>
-    <li>Skilled trades</li>
-</ul>
-</div>
-<div class="col-lg-6">
-<h2>25 <span>Years of experience</span></h2>
-</div>
-</div>
-</div> -->
+
 </div>
 </div>
 
@@ -332,8 +313,8 @@ Wooded ladies she basket season age her uneasy saw. Discourse unwilling am no de
 
         <div class="boxcontainer">
             <div class="imgBox">
-                <img src="assets/img/aftereffect1.jpg">
-                <img src="assets/img/afftereffect2.jpg">
+                <img src="assets/img/img_63.jpg">
+                <img src="assets/img/img_64.png">
             </div>
 
     </div> 
@@ -574,7 +555,7 @@ Wooded ladies she basket season age her uneasy saw. Discourse unwilling am no de
 <div class="row">
 <div class="col-md-12 pagi-area text-center">
 <nav aria-label="navigation">
-<ul class="pagination">
+<ul class="pagination1">
 <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-double-left"></i></a></li>
 <li class="page-item active"><a class="page-link" href="#">1</a></li>
 <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -800,6 +781,7 @@ Required honoured trifling eat pleasure man relation. Assurance yet bed was impr
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <script src="assets/js/hover-effect.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.js"></script> -->
 
 <script>
 
@@ -810,21 +792,247 @@ const THRESHOLD = 15;
 
 </script>
 
+<script>
+    const displacementSlider = function (opts) {
+    
+      let vertex = `
+            varying vec2 vUv;
+            void main() {
+              vUv = uv;
+              gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+            }
+        `;
+    
+      let fragment = `
+            
+            varying vec2 vUv;
+    
+            uniform sampler2D currentImage;
+            uniform sampler2D nextImage;
+    
+            uniform float dispFactor;
+    
+            void main() {
+    
+                vec2 uv = vUv;
+                vec4 _currentImage;
+                vec4 _nextImage;
+                float intensity = 0.3;
+    
+                vec4 orig1 = texture2D(currentImage, uv);
+                vec4 orig2 = texture2D(nextImage, uv);
+                
+                _currentImage = texture2D(currentImage, vec2(uv.x, uv.y + dispFactor * (orig2 * intensity)));
+    
+                _nextImage = texture2D(nextImage, vec2(uv.x, uv.y + (1.0 - dispFactor) * (orig1 * intensity)));
+    
+                vec4 finalTexture = mix(_currentImage, _nextImage, dispFactor);
+    
+                gl_FragColor = finalTexture;
+    
+            }
+        `;
+    
+      let images = opts.images,image,sliderImages = [];;
+      let canvasWidth = images[0].clientWidth;
+      let canvasHeight = images[0].clientHeight;
+      let parent = opts.parent;
+      let renderWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      let renderHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    
+      let renderW, renderH;
+    
+      if (renderWidth > canvasWidth) {
+        renderW = renderWidth;
+      } else {
+        renderW = canvasWidth;
+      }
+    
+      renderH = canvasHeight;
+    
+      let renderer = new THREE.WebGLRenderer({
+        antialias: false });
+    
+    
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setClearColor(0x23272A, 1.0);
+      renderer.setSize(renderW, renderH);
+      parent.appendChild(renderer.domElement);
+    
+      let loader = new THREE.TextureLoader();
+      loader.crossOrigin = "anonymous";
+    
+      images.forEach(img => {
+    
+        image = loader.load(img.getAttribute('src') + '?v=' + Date.now());
+        image.magFilter = image.minFilter = THREE.LinearFilter;
+        image.anisotropy = renderer.capabilities.getMaxAnisotropy();
+        sliderImages.push(image);
+    
+      });
+    
+      let scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x23272A);
+      let camera = new THREE.OrthographicCamera(
+      renderWidth / -2,
+      renderWidth / 2,
+      renderHeight / 2,
+      renderHeight / -2,
+      1,
+      1000);
+    
+    
+      camera.position.z = 1;
+    
+      let mat = new THREE.ShaderMaterial({
+        uniforms: {
+          dispFactor: { type: "f", value: 0.0 },
+          currentImage: { type: "t", value: sliderImages[0] },
+          nextImage: { type: "t", value: sliderImages[1] } },
+    
+        vertexShader: vertex,
+        fragmentShader: fragment,
+        transparent: true,
+        opacity: 1.0 });
+    
+    
+      let geometry = new THREE.PlaneBufferGeometry(
+      parent.offsetWidth,
+      parent.offsetHeight,
+      1);
+    
+      let object = new THREE.Mesh(geometry, mat);
+      object.position.set(0, 0, 0);
+      scene.add(object);
+    
+      let addEvents = function () {
+    
+        let pagButtons = Array.from(document.getElementById('pagination1').querySelectorAll('button'));
+        let isAnimating = false;
+    
+        pagButtons.forEach(el => {
+    
+          el.addEventListener('click', function () {
+    
+            if (!isAnimating) {
+    
+              isAnimating = true;
+    
+              document.getElementById('pagination1').querySelectorAll('.active')[0].className = '';
+              this.className = 'active';
+    
+              let slideId = parseInt(this.dataset.slide, 10);
+    
+              mat.uniforms.nextImage.value = sliderImages[slideId];
+              mat.uniforms.nextImage.needsUpdate = true;
+    
+              TweenLite.to(mat.uniforms.dispFactor, 1, {
+                value: 1,
+                ease: 'Expo.easeInOut',
+                onComplete: function () {
+                  mat.uniforms.currentImage.value = sliderImages[slideId];
+                  mat.uniforms.currentImage.needsUpdate = true;
+                  mat.uniforms.dispFactor.value = 0.0;
+                  isAnimating = false;
+                } });
+    
+    
+              let slideTitleEl = document.getElementById('slide-title');
+              let slideStatusEl = document.getElementById('slide-status');
+              let nextSlideTitle = document.querySelectorAll(`[data-slide-title="${slideId}"]`)[0].innerHTML;
+              let nextSlideStatus = document.querySelectorAll(`[data-slide-status="${slideId}"]`)[0].innerHTML;
+    
+              TweenLite.fromTo(slideTitleEl, 0.5,
+              {
+                autoAlpha: 1,
+                y: 0 },
+    
+              {
+                autoAlpha: 0,
+                y: 20,
+                ease: 'Expo.easeIn',
+                onComplete: function () {
+                  slideTitleEl.innerHTML = nextSlideTitle;
+    
+                  TweenLite.to(slideTitleEl, 0.5, {
+                    autoAlpha: 1,
+                    y: 0 });
+    
+                } });
+    
+    
+              TweenLite.fromTo(slideStatusEl, 0.5,
+              {
+                autoAlpha: 1,
+                y: 0 },
+    
+              {
+                autoAlpha: 0,
+                y: 20,
+                ease: 'Expo.easeIn',
+                onComplete: function () {
+                  slideStatusEl.innerHTML = nextSlideStatus;
+    
+                  TweenLite.to(slideStatusEl, 0.5, {
+                    autoAlpha: 1,
+                    y: 0,
+                    delay: 0.1 });
+    
+                } });
+    
+    
+            }
+    
+          });
+    
+        });
+    
+      };
+    
+      addEvents();
+    
+      window.addEventListener('resize', function (e) {
+        renderer.setSize(renderW, renderH);
+      });
+    
+      let animate = function () {
+        requestAnimationFrame(animate);
+    
+        renderer.render(scene, camera);
+      };
+      animate();
+    };
+    
+    imagesLoaded(document.querySelectorAll('img'), () => {
+    
+      document.body.classList.remove('loading');
+    
+      const el = document.getElementById('slider');
+      const imgs = Array.from(el.querySelectorAll('img'));
+      new displacementSlider({
+        parent: el,
+        images: imgs });
+    
+    
+    });
+</script>
+    
+
 <!-- 
 <span id="dot" class="dot"></span> -->
 <!-- image distration js -->
 <script>
-    Array.from(document.querySelectorAll ('.imgBox')).forEach(e => {
-        const imgs = Array.from(e.querySelectorAll('img'));
-        new hoverEffect({
-            parent:e,
-            intensity: 0.6,
-            image1: imgs[0].getAttribute('src'),
-            image2: imgs[1].getAttribute('src'),
+Array.from(document.querySelectorAll ('.imgBox')).forEach(e => {
+    const imgs = Array.from(e.querySelectorAll('img'));
+    new hoverEffect({
+        parent:e,
+        intensity: 0.6,
+        image1: imgs[0].getAttribute('src'),
+        image2: imgs[1].getAttribute('src'),
             displacementImage: 'assets/img/water.jpg'
         });
     });
     
-    </script>
+</script>
 </body>
 </html>
